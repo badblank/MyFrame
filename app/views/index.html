@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% for val in data %}
+<div class="panel panel-default">
+    <div class="panel-heading">{{val.title}}</div>
+    <div class="panel-body">
+      {{val.content}} 
+      <p>{{val.createtime|date('Y-m-d H:i:s')}}</p>
+      <p><a href="/index/del/id/{{val.id}}">删除</a></p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
